@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="dark overflow-hidden min-h-screen w-screen max-h-screen select-none overscroll-none"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>app:tailwinds-v3</title>
+    <link rel="stylesheet" href="dist/output.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.0/devicon.min.css"
+      integrity="sha512-UXtfc3GQ+RF4dWu4Rv6hppzVajamLCOhoR5X8hfuYHedgarRXimhhhjNpsQQ3EQLWyeHTwlLcH3k+NNYifeHfA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.0/devicon-colors.min.css"
+      integrity="sha512-MBJvf9Rav5eVlIXaSCKW7NUN8INmz5RhoNU4gGDLXbT58eGt5NGdcCn27tUJCQzrAstyjXFTB12EWNR71l3+7Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/build.css"
+      integrity="sha512-oXqkIy/+iqrHrpoTwFkSLZJpNwoYn9e77QtCNzBi+Jb6uJgTtcdHVy0C+nEpeUfC3fxSbydPxLG+ndikNVvrdQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="../src/assets/icon/codicon.css" />
+    <link rel="stylesheet" href="../src/assets/icon/bundle-icon-ui.css" />
+    <link rel="stylesheet" href="../src/assets/octicons/octicons.css" />
+  </head>
+  <body class="min-h-screen max-h-screen overflow-hidden">
+    <div id="app" class="max-h-screen w-screen overflow-">
+      <div
+        class="flex flex-row justify-start items-start content-start w-full overflow-hidden"
+      >
+        <div
+          class="min-h-screen fixed overflow-hidden min-w-[325px] max-w-[325px] top-0 left-0 z-50 bg-[var(--bg-body)] text-[var(--text-body)] order-1 self-auto md:relative md:translate-0 flex flex-col border-r border-r-[var(--border-color)] md:min-w-[380px] md:max-w-full! md:flex-row"
+          id="fileDrawer"
+        >
+          <div
+            class="w-full flex items-center shrink-0 flex-row md:flex-col md:items-center min-h-[50px] md:w-[70px] md:border-r md:border-r-[var(--border-color)] md:h-screen text-[var(--text-secondary)] md:justify-start md:pb-4"
+            id="drawerHeader"
+          >
+            <div
+              class="w-full md:w-max *:cursor-pointer flex items-center shrink-0 flex-row md:flex-col h-full md:*:h-[4rem] *:relative *:transition-colors *:ease-in-out *:duration-200 *:mx-[0.525rem] *:md:my-0 *:md:mx-0"
+            >
+              <div
+                class="w-[3rem] h-[4rem] md:h-[3rem] md:w-[4rem] text-2xl inline-flex items-center justify-center shrink-0"
+                role="button"
+                aria-label="navigasi"
+                data-target="1"
+              >
+                <i class="icodex-paper-airplane"></i>
+              </div>
+              <div
+                class="w-[3rem] h-[4rem] md:h-[3rem] md:w-[4rem] text-2xl inline-flex items-center justify-center shrink-0 after:content-[''] after:w-full after:h-0.5 after:bg-[var(--text-body)] after:absolute after:bottom-1 md:after:hidden md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-0 md:before:h-full md:before:w-0.5 md:before:bg-[var(--text-body)] text-[var(--text-body)]"
+                role="button"
+                aria-label="navigasi"
+                data-target="2"
+              >
+                <i class="icodex-file-directory"></i>
+              </div>
+              <div
+                class="w-[3rem] h-[4rem] md:h-[3rem] md:w-[4rem] text-2xl inline-flex items-center justify-center shrink-0"
+                role="button"
+                aria-label="navigasi"
+                data-target="3"
+              >
+                <i class="icodex-codescan"></i>
+              </div>
+              <div
+                class="w-[3rem] h-[4rem] md:h-[3rem] md:w-[4rem] text-2xl inline-flex items-center justify-center shrink-0"
+                role="button"
+                aria-label="navigasi"
+                data-target="4"
+              >
+                <i class="icodex-git-branch"></i>
+              </div>
+              <div
+                class="w-[3rem] h-[4rem] md:h-[3rem] md:w-[4rem] text-2xl inline-flex items-center justify-center shrink-0 md:mt-auto!"
+                role="button"
+                aria-label="navigasi"
+                data-target="5"
+              >
+                <i class="icodex-person"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            id="dragHandle"
+            class="absolute top-0 right-0 h-full w-1 bg-transparent hover:bg-zinc-800/50 cursor-col-resize hidden md:block"
+          ></div>
+          <!-- content drawer -->
+          <div
+            class="w-full h-full min-h-0 flex flex-col shrink"
+            data-content="1"
+          >
+            <div
+              class="uppercase pl-4 pr-3 text-[var(--text-secondary)] h-10 flex items-center justify-between mb-4"
+            >
+              <div class="font-medium tracking-tight text-[.83rem]">
+                Navigasi
+              </div>
+              <button
+                class="size-10 focus:outline-none cursor-pointer"
+                title="open dropdown menu"
+                type="button"
+              >
+                <i class="icodex-kebab-horizontal text-2xl text-current"></i>
+              </button>
+            </div>
+            <div class="px-4">
+              <div
+                class="flex flex-row flex-wrap border border-[var(--border-color)] rounded px-2 py-4 gap-y-2.5 *:text-base! *:mx-[6px] *:not-last:py-2 *:w-[calc(33.3333%-12px)] *:transition-colors *:cursor-pointer bg-secondary-dark *:[&:focus]:bg-[color-mix(in_srgb,var(--bg-secondary)_95%,white)] *:focus:outline-none max-w-80 mx-auto"
+              >
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-1"
+                  type="button"
+                >
+                  <i class="icodex-inbox text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >proyek</span
+                  >
+                </button>
+
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] focus:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-2"
+                  type="button"
+                >
+                  <i class="icodex-code-square text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >editor</span
+                  >
+                </button>
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] focus:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-3"
+                  type="button"
+                >
+                  <i class="icodex-gear text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >preferensi</span
+                  >
+                </button>
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] focus:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-4"
+                  type="button"
+                >
+                  <i class="icodex-telescope text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >menemukan</span
+                  >
+                </button>
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] focus:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-5"
+                  type="button"
+                >
+                  <i class="icodex-beaker-24 text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >Labs Saya</span
+                  >
+                </button>
+                <button
+                  class="rounded-md hover:bg-[var(--bg-secondary)] focus:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-6"
+                  type="button"
+                >
+                  <i class="octicon octicon-checklist-24 text-[22px]!"></i>
+                  <span class="text-[11px] capitalize font-medium mt-2"
+                    >Ubah Log</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-[100dvh] min-h-0 fle flex-col shrink hidden"
+            id="treeView"
+            data-content="2"
+          >
+            <div
+              class="*:text-[var(--text-secondary)] flex flex-row w-full items-center min-h-10 pl-4 pr-3"
+              id="treeviewHeader"
+            >
+              <span
+                class="inline-flex font-medium text-[.83rem] uppercase tracking-tight cursor-default"
+                >files</span
+              >
+              <div class="ml-auto *:cursor-pointer flex items-center shrink-0">
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="search"
+                  role="button"
+                >
+                  <i class="icodex-search-2 text-xl"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                >
+                  <i class="icodex-location text-xl!"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                >
+                  <i class="icodex-file-added text-xl!"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                >
+                  <i class="icodex-folder-plus text-xl"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                >
+                  <i class="icodex-kebab-horizontal text-2xl!"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1" id="rootDir">
+              <a
+                draggable="true"
+                class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                tabindex="0"
+              >
+                <i class="icodex-chevron-right text-sm! rotate-90"></i>
+                <span
+                  class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                  >HTML
+                </span>
+                <span
+                  class="icodex-kebab-horizontal text-2xl ml-auto shrink-0 basis-8 text-[var(--text-secondary)]"
+                ></span>
+              </a>
+              <div class="flex-1" id="dirContent1">
+                <a
+                  draggable="true"
+                  data-type="folder"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  tabindex="0"
+                >
+                  <span
+                    class="w-2 min-h-10 border-l border-l-[var(--border-color)] ml-[7px]"
+                  ></span>
+                  <i class="icodex-chevron-right text-sm!"></i>
+                  <span
+                    class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                    >assets
+                  </span>
+                  <span
+                    class="icodex-kebab-horizontal text-2xl ml-auto shrink-0 basis-8 text-[var(--text-secondary)]"
+                  ></span>
+                </a>
+                <a
+                  draggable="true"
+                  data-type="file"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  tabindex="0"
+                >
+                  <span
+                    class="w-2 min-h-10 border-l border-l-[var(--border-color)] ml-[7px]"
+                  ></span>
+                  <span class="devicon devicon-html5-plain colored"></span>
+                  <span
+                    class="ml-1.5 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                    >index.html</span
+                  >
+                  <span
+                    class="icodex-kebab-horizontal text-2xl ml-auto shrink-0 basis-8 text-[var(--text-secondary)]"
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="size-full min-h-0 flex-col shrink hidden"
+            id="searchCode"
+            data-content="3"
+          >
+            <div
+              class="*:text-[var(--text-secondary)] flex flex-row w-full items-center min-h-10 pl-4 pr-3 md:border-b-0"
+              id="treeviewHeader"
+            >
+              <span
+                class="inline-flex font-medium text-[.83rem] uppercase tracking-tight cursor-default"
+                >search</span
+              >
+              <div
+                class="ml-auto *:cursor-pointer flex items-center shrink-0 *:focus-within:text-[var(--primary)] *:outline-none"
+              >
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="search"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i class="codicon codicon-regex text-xl"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i class="codicon codicon-case-sensitive text-lg"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i class="codicon codicon-whole-word"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i class="codicon codicon-list-filter text-lg"></i>
+                </div>
+                <div
+                  class="w-[2.5rem] h-[2.5rem] inline-flex items-center justify-center"
+                  aria-label="currunt location"
+                  role="button"
+                  tabindex="0"
+                >
+                  <i class="codicon codicon-arrow-swap text-xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="capitalize px-4">
+              <div class="w-full max-w-80 mx-auto">
+                <div class="relative flex items-center my-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="absolute w-5 h-5 top-2.5 left-2.5 text-[var(--text-secondary)]"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <input
+                    class="w-full bg-[var(--bg-secondary)] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline-[0.125rem] outline-offset-[-2px] outline-[var(--border-color)] rounded-xl pl-10 pr-3 py-2.5 transition duration-300 ease focus:outline-[var(--border-primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5"
+                    placeholder="Find Text"
+                    type="text"
+                    name="Find Text"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-content="5" class="size-full hidden flex-col shrink">
+            <div class="flex-1">
+              <div
+                class="w-full text-start uppercase font-medium text-[.83rem] tracking-tight text-[var(--text-secondary)] min-h-10 flex items-center px-4"
+              >
+                <span>Login</span>
+              </div>
+              <div
+                class="w-full max-w-80 px-4 mt-2 flex flex-col justify-center items-center gap-3 mx-auto"
+              >
+                <a
+                  title="Masuk dengan Google"
+                  href="#"
+                  class="w-full md:max-w-[280px] flex px-4 py-2.5 border border-[var(--border-color)] rounded-md gap-4 bg-light text-dark font-medium tracking-normal justify-center items-center"
+                >
+                  <svg class="size-5" viewBox="0 0 128 128">
+                    <path
+                      fill="none"
+                      d="M44.59 4.21a63.28 63.28 0 004.33 120.9 67.6 67.6 0 0032.36.35 57.13 57.13 0 0025.9-13.46 57.44 57.44 0 0016-26.26 74.33 74.33 0 001.61-33.58H65.27v24.69h34.47a29.72 29.72 0 01-12.66 19.52 36.16 36.16 0 01-13.93 5.5 41.29 41.29 0 01-15.1 0A37.16 37.16 0 0144 95.74a39.3 39.3 0 01-14.5-19.42 38.31 38.31 0 010-24.63 39.25 39.25 0 019.18-14.91A37.17 37.17 0 0176.13 27a34.28 34.28 0 0113.64 8q5.83-5.8 11.64-11.63c2-2.09 4.18-4.08 6.15-6.22A61.22 61.22 0 0087.2 4.59a64 64 0 00-42.61-.38z"
+                    ></path>
+                    <path
+                      fill="#e33629"
+                      d="M44.59 4.21a64 64 0 0142.61.37 61.22 61.22 0 0120.35 12.62c-2 2.14-4.11 4.14-6.15 6.22Q95.58 29.23 89.77 35a34.28 34.28 0 00-13.64-8 37.17 37.17 0 00-37.46 9.74 39.25 39.25 0 00-9.18 14.91L8.76 35.6A63.53 63.53 0 0144.59 4.21z"
+                    ></path>
+                    <path
+                      fill="#f8bd00"
+                      d="M3.26 51.5a62.93 62.93 0 015.5-15.9l20.73 16.09a38.31 38.31 0 000 24.63q-10.36 8-20.73 16.08a63.33 63.33 0 01-5.5-40.9z"
+                    ></path>
+                    <path
+                      fill="#587dbd"
+                      d="M65.27 52.15h59.52a74.33 74.33 0 01-1.61 33.58 57.44 57.44 0 01-16 26.26c-6.69-5.22-13.41-10.4-20.1-15.62a29.72 29.72 0 0012.66-19.54H65.27c-.01-8.22 0-16.45 0-24.68z"
+                    ></path>
+                    <path
+                      fill="#319f43"
+                      d="M8.75 92.4q10.37-8 20.73-16.08A39.3 39.3 0 0044 95.74a37.16 37.16 0 0014.08 6.08 41.29 41.29 0 0015.1 0 36.16 36.16 0 0013.93-5.5c6.69 5.22 13.41 10.4 20.1 15.62a57.13 57.13 0 01-25.9 13.47 67.6 67.6 0 01-32.36-.35 63 63 0 01-23-11.59A63.73 63.73 0 018.75 92.4z"
+                    ></path>
+                  </svg>
+                  <span class="text-sm">Masuk dengan Google</span>
+                </a>
+
+                <a
+                  title="Masuk dengan Github"
+                  href="#"
+                  class="w-full md:max-w-[280px] flex px-4 py-2.5 border border-[var(--border-color)] rounded-md gap-4 bg-secondary-dark font-medium tracking-normal justify-center items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="size-5"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                    />
+                  </svg>
+                  <span class="text-sm">Masuk dengan Github</span>
+                </a>
+                <div class="">
+                  <p
+                    class="font-medium text-sm capitalize leading-6 text-[var(--text-secondary)] select-text"
+                  >
+                    Klik Masuk untuk menyetujui
+                    <a
+                      class="text-primary select-none"
+                      title="Persyaratan Layanan"
+                      href="#"
+                      >Persyaratan Layanan</a
+                    >
+                    kami dan menyatakan bahwa
+                    <a
+                      class="text-primary select-none"
+                      title="Kebijakan Pribadi"
+                      href="#"
+                      >Kebijakan Pribadi</a
+                    >
+                    kami berlaku untuk Anda.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="min-h-screen max-h-screen overflow-hidden w-full flex-1 order-3 basis-0 grow shrink-1 self-auto bg-[var(--bg-body)] text-[var(--text-body)]"
+          id="contentRight"
+        >
+          <div
+            class="min-h-[60px] max-h-[60px] border-b border-b-[var(--border-color)] w-full flex items-center pl-2.5 md:px-0 text-[var(--text-secondary)]"
+          >
+            <div
+              class="flex flex-row flex-nowrap justify-start items-center content-start w-full min-h-[60px]"
+            >
+              <div
+                class="min-h-full min-w-max flex-1 order-1 basis-0 grow-0 shrink-0 self-auto items-center inline-flex flex-row gap-2 flex-nowrap"
+              >
+                <div
+                  aria-label="menu"
+                  role="button"
+                  class="min-w-max cursor-pointer md:hidden"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="min-h-[60px] min-w-[100px] flex-1 order-2 basis-60 grow shrink-0 self-auto px-2.5 flex items-center"
+              >
+                <div
+                  style="
+                    overflow-x: scroll;
+                    max-width: min-content;
+                    scrollbar-width: none;
+                  "
+                >
+                  <nav
+                    class="text-sm font-medium w-full"
+                    aria-label="breadcrumb"
+                  >
+                    <ol
+                      class="flex flex-nowrap items-center gap-1 shrink-0 leading-4"
+                    >
+                      <li class="flex items-center gap-1">
+                        <a
+                          draggable="false"
+                          href="#"
+                          class="select-none inline-flex items-center font-[600] outline-none"
+                          >dist</a
+                        >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          class="size-4 mt-0.5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </li>
+                      <li class="flex items-center gap-1">
+                        <a
+                          draggable="false"
+                          href="#"
+                          class="select-none inline-flex items-center font-[600] outline-none"
+                          >public</a
+                        >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          class="size-4 mt-0.5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </li>
+                      <li
+                        class="flex items-center leading-4 gap-1 font-medium select-none"
+                        aria-current="page"
+                      >
+                        <i class="devicon-html5-plain colored mt-0.5"></i>
+                        index.html
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <div
+                class="min-h-[50px] min-w-min justify-center flex-1 order-3 basis-24 grow-0 shrink-0 self-auto cursor-default"
+              >
+                <div
+                  class="inline-flex items-center w-[2.5rem] h-[3rem] justify-center cursor-pointer"
+                  aria-label="run"
+                  role="button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-5"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="inline-flex items-center min-w-[2.5rem] h-[3rem] justify-center cursor-pointer"
+                  aria-label="run"
+                  role="button"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-5 text-emerald-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="overflow-x-hidden overflow-y-auto scrollbar-w-none h-[calc(100vh-61px)] max-h-[calc(100vh-61px)] flex flex-col"
+          ></div>
+        </div>
+        <!-- content right end -->
+      </div>
+    </div>
+
+    <!-- pastikan sudah include GoldenLayout CSS & JS -->
+
+    <script src="../node_modules/interactjs/dist/interact.min.js"></script>
+    <script>
+      const resizeDrawer = () => {
+        const handle = document.getElementById('dragHandle');
+        let interactInstance = null; // simpan instance biar bisa dimatikan
+
+        try {
+          if (typeof interact !== 'function') {
+            const lang = navigator.language.toLowerCase();
+            if (lang.startsWith('id')) {
+              throw 'interact belum didefinisikan sebelum digunakan.\nPastikan link CDN / path lokal benar.\nhttps://interactjs.io/';
+            } else if (lang.startsWith('en')) {
+              throw 'interact has not been defined before use.\nCheck CDN/local path.\nhttps://interactjs.io/';
+            }
+          }
+
+          function query() {
+            return window.matchMedia('(min-width: 768px)').matches;
+          }
+
+          function enableInteract() {
+            if (interactInstance) return; // sudah aktif → jangan double
+            interactInstance = interact('#fileDrawer').resizable({
+              edges: { right: '#dragHandle' },
+              listeners: {
+                start() {
+                  handle.classList.remove('bg-transparent');
+                  handle.classList.add('bg-neutral-700/50', 'w-1.5');
+                },
+                move(event) {
+                  event.target.style.width = event.rect.width + 'px';
+                },
+                end() {
+                  handle.classList.remove('bg-neutral-700/50', 'w-1.5');
+                  handle.classList.add('bg-transparent');
+                },
+              },
+              modifiers: [
+                interact.modifiers.restrictSize({
+                  min: { width: 325 },
+                  max: { width: window.innerWidth - 325 },
+                }),
+              ],
+            });
+            console.log('Interact diaktifkan');
+          }
+
+          function disableInteract() {
+            if (!interactInstance) return;
+            interact('#fileDrawer').unset(); // hapus semua listener resizable
+            interactInstance = null;
+            console.log('Interact dimatikan');
+          }
+
+          // pertama kali jalan
+          if (query()) {
+            enableInteract();
+          } else {
+            disableInteract();
+          }
+
+          // saat resize
+          window.addEventListener('resize', () => {
+            if (query()) {
+              enableInteract();
+            } else {
+              disableInteract();
+            }
+          });
+        } catch (e) {
+          console.warn(e);
+        }
+      };
+
+      resizeDrawer();
+    </script>
+
+    <script>
+      const tabsBtn = document.querySelectorAll('[data-target]');
+      const contents = document.querySelectorAll('[data-content]');
+
+      tabsBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // ambil target id dari tombol
+          const tabId = btn.dataset.target;
+
+          // sembunyikan semua konten
+          contents.forEach(content => {
+            content.classList.add('hidden'); // atau remove "flex"
+          });
+
+          // tampilkan konten sesuai target
+          const targetContent = document.querySelector(
+            `[data-content="${tabId}"]`,
+          );
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+            targetContent.classList.add('flex'); // kalau memang mau pakai flex
+          }
+
+          // (opsional) aktifkan tombol tab
+          tabsBtn.forEach(b => {
+            b.classList.remove(
+              "after:content-['']",
+              'after:w-full',
+              'after:h-0.5',
+              'after:bg-[var(--text-body)]',
+              'after:absolute',
+              'after:bottom-1',
+              'md:after:hidden',
+              "md:before:content-['']",
+              'md:before:absolute',
+              'md:before:left-0',
+              'md:before:top-0',
+              'md:before:h-full',
+              'md:before:w-0.5',
+              'md:before:bg-[var(--text-body)]',
+              'text-[var(--text-body)]',
+            );
+          });
+          btn.classList.add(
+            "after:content-['']",
+            'after:w-full',
+            'after:h-0.5',
+            'after:bg-[var(--text-body)]',
+            'after:absolute',
+            'after:bottom-1',
+            'md:after:hidden',
+            "md:before:content-['']",
+            'md:before:absolute',
+            'md:before:left-0',
+            'md:before:top-0',
+            'md:before:h-full',
+            'md:before:w-0.5',
+            'md:before:bg-[var(--text-body)]',
+            'text-[var(--text-body)]',
+          );
+        });
+      });
+    </script>
+    <script src="../src/assets/icon/jsdenticon.js"></script>
+  </body>
+</html>

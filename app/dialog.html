@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.0/devicon-colors.min.css"
+      integrity="sha512-MBJvf9Rav5eVlIXaSCKW7NUN8INmz5RhoNU4gGDLXbT58eGt5NGdcCn27tUJCQzrAstyjXFTB12EWNR71l3+7Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="h-screen w-screen bg-[var(--bg-body)] text-[var(--text-body)] relative"
+  >
+    <!-- <div
+      role="dialog"
+      class="min-w-96 flex flex-col bg-zinc-900 text-white rounded select-none"
+    >
+      <div
+        class="w-full min-h-12 flex items-center justify-between *:inline-flex px-4"
+      >
+        <span class="text-lg font-medium">Dialog header</span>
+        <div
+          role="button"
+          aria-label="close dialog "
+          class="rounded cursor-pointer transition-colors ease-in-out duration-150 opacity-70 hover:opacity-90"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="flex-1 px-4">
+        <p class="text-sm text-gray-400">
+          Deleting this item is permanent and cannot be undone. Please confirm
+          before proceeding.
+        </p>
+      </div>
+      <div class="flex justify-end px-4 pt-2 pb-4">
+        <div
+          role="button"
+          aria-label="send"
+          class="py-1.5 px-4 bg-blue-600 hover:bg-blue-700 active:bg-blue-600 transition-colors max-w-max rounded-sm font-medium text-sm cursor-pointer"
+        >
+          Buttons
+        </div>
+      </div>
+    </div> -->
+    <div
+      class=" flex-col justify-center items-center gap-4 py-4 bg-dark h-screen hidden"
+    >
+      <div
+        role="dialog"
+        class="max-w-80 hidden flex-col bg-zinc-900 text-white rounded select-none shadow"
+      >
+        <div
+          class="w-full min-h-12 flex items-center justify-between *:inline-flex px-4"
+        >
+          <a class="text-lg text-blue-500 font-medium items-center gap-x-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+              />
+            </svg>
+
+            <span> Informasi Umum </span></a
+          >
+          <div
+            role="button"
+            aria-label="close dialog "
+            class="rounded cursor-pointer transition-colors ease-in-out duration-150 opacity-70 hover:opacity-90"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="flex-1 px-4">
+          <p class="text-sm text-gray-300 my-4">
+            Di sini Anda dapat melihat detail dasar tentang proyek Anda,
+            termasuk nama, tanggal dibuat, dan status saat ini.
+          </p>
+        </div>
+        <div
+          class="flex justify-end px-4 pt-2 pb-4 *:border *:border-transparent"
+        >
+          <div
+            role="button"
+            aria-label="send"
+            class="py-1.5 px-2 bg-blue-600/10 hover:border-blue-500 active:bg-blue-600/10 transition-colors ease-in-out duration-150 max-w-max rounded font-medium text-sm text-blue-500 cursor-pointer flex items-center gap-1"
+          >
+            Lihat Detail
+          </div>
+        </div>
+      </div>
+
+    
+    </div>
+
+<div class="h-screen w-screen inset-0 fixed">
+<div class="w-auto h-auto flex bg-zinc-900">
+<div class="size-12.5 rounded-full bg-green-500/20 text-green-600 flex items-center justify-center">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+</svg>
+
+</div>
+</div>
+</div>
+  </body>
+</html>

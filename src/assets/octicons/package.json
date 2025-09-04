@@ -1,0 +1,26 @@
+{
+  "version": "11.2.0-alpha.0",
+  "name": "@icon/octicons",
+  "description": "A scalable set of icons handcrafted with <3 by GitHub.",
+  "author": "GitHub Inc.",
+  "license": "MIT",
+  "repository": "https://github.com/thecreation/standard-icons/tree/master/modules/octicons",
+  "bugs": {
+    "url": "https://github.com/thecreation/standard-icons/issues"
+  },
+  "scripts": {
+    "import": "../../scripts/module/import --module=octicons",
+    "optimize": "../../scripts/module/optimize --module=octicons"
+  },
+  "keywords": [
+    "icons",
+    "icon"
+  ],
+  "devDependencies": {
+    "@primer/octicons": "^11.2.0"
+  },
+  "homepage": "https://octicons.github.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/treeview.css" />
+
+  </head>
+  <body
+  class="bg-gray-100 flex flex-col w-screen h-screen items-center justify-center"
+  >
+  <link
+    href="
+https://cdn.jsdelivr.net/npm/vscode-codicons@0.0.17/dist/codicon.min.css
+"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.0/devicon-colors.min.css"
+    integrity="sha512-MBJvf9Rav5eVlIXaSCKW7NUN8INmz5RhoNU4gGDLXbT58eGt5NGdcCn27tUJCQzrAstyjXFTB12EWNR71l3+7Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <div class="p-2 max-w-md bg-slate-800 min-w-[325px] min-h-[400px]">
+      <div class="flex-1 text-slate-300" id="rootDir">
+        <a
+          draggable="true"
+          class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-blue-500 outline-offset-[-1px] focus:bg-blue-500/15"
+          tabindex="0"
+        >
+          <span class="codicon codicon-chevron-down text-base!"></span>
+          <span
+            class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+            >HTML
+          </span>
+          <span
+            class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+          ></span>
+        </a>
+        <div class="flex-1" id="dir1">
+          <a
+            draggable="true"
+            data-type="folder"
+            class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+            tabindex="0"
+          >
+            <span
+              class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+            ></span>
+            <span class="codicon codicon-chevron-down text-base!"></span>
+            <span
+              class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+              >assets
+            </span>
+            <span
+              class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+            ></span>
+          </a>
+          <div class="flex-1" id="dir2">
+            <a
+              draggable="true"
+              data-type="folder"
+              class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+              tabindex="0"
+            >
+              <span
+                class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+              ></span>
+              <span
+                class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+              ></span>
+              <span class="codicon codicon-chevron-down text-base!"></span>
+              <span
+                class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                >dist
+              </span>
+              <span
+                class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+              ></span>
+            </a>
+            <div class="flex-1" id="dir3">
+              <a
+                draggable="true"
+                data-type="folder"
+                class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                tabindex="0"
+              >
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                ></span>
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                ></span>
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                ></span>
+                <span class="codicon codicon-chevron-down text-base!"></span>
+                <span
+                  class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                  >css
+                </span>
+                <span
+                  class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+                ></span>
+              </a>
+              <a
+                draggable="true"
+                data-type="file"
+                class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                tabindex="0"
+              >
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                ></span>
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                ></span>
+                <span
+                  class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                ></span>
+                <span class="devicon devicon-css3-plain colored"></span>
+                <span
+                  class="ml-1.5 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                  >style.css</span
+                >
+                <span
+                  class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+                ></span>
+              </a>
+              <div class="flex-1" id="dir4">
+                <a
+                  draggable="true"
+                  data-type="folder"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  tabindex="0"
+                >
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                  ></span>
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                  ></span>
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-gray-700 ml-[7px]"
+                  ></span>
+                  <span class="codicon codicon-chevron-down text-base!"></span>
+                  <span
+                    class="ml-1 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                    >js
+                  </span>
+                  <span
+                    class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+                  ></span>
+                </a>
+                <a
+                  draggable="true"
+                  data-type="file"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  tabindex="0"
+                >
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                  ></span>
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                  ></span>
+                  <span
+                    class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+                  ></span>
+                  <span class="devicon devicon-javascript-plain colored"></span>
+                  <span
+                    class="ml-1.5 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+                    >main.js</span
+                  >
+                  <span
+                    class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a
+            draggable="true"
+            data-type="file"
+            class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+            tabindex="0"
+          >
+            <span
+              class="w-2 min-h-[2.5rem] border-l border-l-slate-700 ml-[7px]"
+            ></span>
+            <span class="devicon devicon-html5-plain colored"></span>
+            <span
+              class="ml-1.5 whitespace-nowrap overflow-hidden text-ellipsis font-medium"
+              >index.html</span
+            >
+            <span
+              class="codicon codicon-ellipsis text-2xl! ml-auto shrink-0 basis-8 text-slate-300"
+            ></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // ambil semua trigger folder + root
+        const triggers = [
+          ...document.querySelectorAll('[data-type="folder"]'),
+          document.querySelector('#rootDir > a'), // root trigger
+        ].filter(Boolean);
+
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const content = trigger.nextElementSibling; // div setelah <a>
+            if (!content) return;
+
+            // toggle show/hide
+            if (content.style.display === 'none') {
+              content.style.display = ''; // tampil default
+            } else {
+              content.style.display = 'none'; // sembunyikan
+            }
+
+            // toggle icon chevron
+            const icon = trigger.querySelector('.codicon');
+            if (icon) {
+              icon.classList.toggle('codicon-chevron-down');
+              icon.classList.toggle('codicon-chevron-right');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html> 

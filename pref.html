@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings page</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="src/assets/css/app.css" />
+    <link rel="stylesheet" href="src/assets/icon/bootstrap-icons.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      /* From Uiverse.io by namecho */
+      .switch {
+        --button-width: 2.5em;
+        --button-height: 1em;
+        --toggle-diameter: 1.375em;
+        --button-toggle-offset: calc(
+          (var(--button-height) - var(--toggle-diameter)) / 2
+        );
+        --toggle-shadow-offset: 10px;
+        --toggle-wider: 3em;
+        --color-grey: #eeeeee2d;
+        --color-green: var(--primary);
+      }
+
+      .slider {
+        display: inline-flex;
+        width: var(--button-width);
+        height: var(--button-height);
+        background-color: var(--color-grey);
+        border-radius: calc(var(--button-height) / 2);
+        position: relative;
+        transition: 0.25s all ease-in-out;
+        cursor: pointer;
+      }
+
+      .slider::after {
+        content: '';
+        display: inline-block;
+        width: var(--toggle-diameter);
+        height: var(--toggle-diameter);
+        background-color: #fff;
+        border-radius: calc(var(--toggle-diameter) / 2);
+        position: absolute;
+        top: var(--button-toggle-offset);
+        transform: translateX(var(--button-toggle-offset));
+        box-shadow: var(--toggle-shadow-offset) 0
+          calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+        transition: 0.3s all ease-in-out;
+      }
+
+      .switch input[type='checkbox']:checked + .slider {
+        background-color: var(--color-green);
+      }
+
+      .switch input[type='checkbox']:checked + .slider::after {
+        transform: translateX(
+          calc(
+            var(--button-width) - var(--toggle-diameter) -
+              var(--button-toggle-offset)
+          )
+        );
+        box-shadow: calc(var(--toggle-shadow-offset) * -1) 0
+          calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+      }
+
+      .switch input[type='checkbox'] {
+        display: none;
+      }
+
+      .switch input[type='checkbox']:active + .slider::after {
+        width: var(--toggle-wider);
+      }
+
+      .switch input[type='checkbox']:checked:active + .slider::after {
+        transform: translateX(
+          calc(
+            var(--button-width) - var(--toggle-wider) -
+              var(--button-toggle-offset)
+          )
+        );
+      }
+
+      .settings-page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-height: calc(100vh - 61.6875px);
+        min-height: calc(100vh - 61.6875px);
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: none !important;
+        background-color: var(--bg-body);
+      }
+
+      .select-wrapper {
+        min-width: 12rem;
+      }
+
+      .select-container {
+        position: relative;
+      }
+
+      .custom-select {
+        width: 100%;
+        background: var(--bg-body);
+        color: var(--text-color); /* slate-700 */
+        font-size: 0.875rem; /* text-sm */
+        border: 1px solid var(--border-color); /* slate-200 */
+        border-radius: 0.375rem; /* rounded */
+        padding: 0.5rem 2rem 0.5rem 0.75rem; /* py-2 px-3 + space untuk icon */
+        appearance: none; /* hilangkan arrow default */
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+      }
+
+      .custom-select::placeholder {
+        color: #94a3b8; /* slate-400 */
+      }
+
+      .custom-select:hover {
+        border-color: var(--primary); /* slate-400 */
+      }
+
+      .custom-select:focus {
+        outline: none;
+        border-color: var(--border-color); /* slate-400 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+      }
+
+      .select-icon {
+        position: absolute;
+        top: 0.5rem; /* 2.5 */
+        right: 0.625rem;
+        width: 1.25rem; /* h-5 */
+        height: 1.25rem;
+        color: var(--icon-alpha); /* slate-700 */
+        pointer-events: none;
+      }
+
+      .pref-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1rem; /* gap-4 */
+        margin-bottom: 1rem;
+      }
+
+      .pref-name {
+        font-size: 1rem;
+        font-weight: inh;
+        line-height: 1.5rem;
+        letter-spacing: -0.025em;
+      }
+      .item {
+        flex-wrap: nowrap;
+        border-width: 0px;
+        text-align: center;
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 1;
+        font-weight: bold;
+      }
+      .item:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        max-width: 15rem;
+        padding: 0.5rem 0.5rem;
+        padding-right: 1rem;
+      }
+
+      @media (width <= 380px) {
+        .pref-item {
+          flex-direction: column;
+        }
+        .item:first-child {
+          max-width: 11rem;
+        }
+      }
+      .item:first-child > .info {
+        display: inline-flex;
+      }
+      .settings-container {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        display: inline-flex;
+        flex-direction: column;
+        font-family: sans-serif;
+      }
+
+      .settings-container ._title {
+        font-size: 0.9rem;
+        display: inline-flex;
+        text-transform: uppercase;
+        font-weight: bold !important;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.025em;
+      }
+
+      @media (width >= 768px) {
+        .settings-container {
+          max-width: 768px;
+        }
+      }
+    </style>
+    <div class="settings-page">
+  <div class="settings-container">
+        <section class="appearance">
+          <span class="_title">Appearance</span>
+          <div class="pref-item">
+            <div class="item">
+              <span class="pref-name">Language</span>
+              <span class="info">
+                <i class="bi bi-info-circle"></i>
+              </span>
+            </div>
+            <div class="item">
+              <div class="select-wrapper">
+                <div class="select-container">
+                  <select title="Language" class="custom-select">
+                    <option value="brazil">Brazil</option>
+                    <option value="bucharest">Bucharest</option>
+                    <option value="london">London</option>
+                    <option value="washington">Washington</option>
+                  </select>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.2"
+                    stroke="currentColor"
+                    class="select-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pref-item">
+            <div class="item">
+              <span class="pref-name">Theme</span>
+              <span class="info">
+                <i class="bi bi-info-circle"></i>
+              </span>
+            </div>
+            <div class="item">
+              <div class="select-wrapper">
+                <div class="select-container">
+                  <select title="Theme" class="custom-select">
+                    <option value="brazil">Github dark</option>
+                    <option value="bucharest">Bucharest</option>
+                    <option value="london">London</option>
+                    <option value="washington">Washington</option>
+                  </select>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.2"
+                    stroke="currentColor"
+                    class="select-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pref-item">
+            <div class="item">
+              <span class="pref-name">Background</span>
+              <span class="info">
+                <i class="bi bi-info-circle"></i>
+              </span>
+            </div>
+            <div class="item">
+              <div class="select-wrapper">
+                <div class="select-container">
+                  <select title="Background" class="custom-select">
+                    <option value="brazil">Dark</option>
+                    <option value="bucharest">Light</option>
+                  </select>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.2"
+                    stroke="currentColor"
+                    class="select-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pref-item">
+            <div class="item">
+              <span class="pref-name">Show File Tabs</span>
+              <span class="info">
+                <i class="bi bi-info-circle"></i>
+              </span>
+            </div>
+            <div class="item">
+              <!-- From Uiverse.io by namecho -->
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="pref-item">
+            <div class="item">
+              <span class="pref-name">Show Indent Tree</span>
+              <span class="info">
+                <i class="bi bi-info-circle"></i>
+              </span>
+            </div>
+            <div class="item">
+              <!-- From Uiverse.io by namecho -->
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

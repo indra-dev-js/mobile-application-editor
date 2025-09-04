@@ -1,0 +1,16 @@
+{encoding: 'utf8', fid: 'coqcyqoz6zh7ommqw0gine6ajv', text: '[{"dir":"idb/HTML","git":false,"modifiedAt":175576…db/HTML","git":false,"modifiedAt":1755762639037}]', ctimeMs: 1755762527853, mtimeMs: 1755762639037}
+ctimeMs
+: 
+1755762527853
+encoding
+: 
+"utf8"
+fid
+: 
+"coqcyqoz6zh7ommqw0gine6ajv"
+mtimeMs
+: 
+1755762639037
+text
+: 
+"[{\"dir\":\"idb/HTML\",\"git\":false,\"modifiedAt\":1755762527853},{\"dir\":\"idb/application\",\"git\":false,\"modifiedAt\":1755762550147},{\"dir\":\"idb/HTML\",\"git\":false,\"modifiedAt\":1755762550157},{\"dir\":\"idb/application\",\"git\":false,\"modifiedAt\":1755762604833},{\"dir\":\"idb/HTML\",\"git\":false,\"modifiedAt\":1755762604845},{\"dir\":\"idb/HTML\",\"git\":false,\"modifiedAt\":1755762629868},{\"dir\":\"idb/APP\",\"git\":false,\"modifiedAt\":1755762639025},{\"dir\":\"idb/HTML\",\"git\":false,\"modifiedAt\":1755762639037}]"

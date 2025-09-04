@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-dark: #121216;
+  --color-light: #fafafa;
+  --color-primary: var(--color-blue-500);
+  --color-secondary: var(--color-zinc-200);
+  --color-on-secondary: var(--color-zinc-600);
+  --color-secondary-dark: var(--color-zinc-900);
+  --color-on-secondary-dark: var(--color-zinc-400);
+}
+
+@layer base {
+  :root.light {
+    --bg-body: var(--color-light);
+    --text-body: var(--color-dark);
+    --border-color: var(--color-zinc-300);
+    --text-secondary: var(--color-on-secondary);
+    --bg-secondary: var(--color-secondary);
+    --text-primary: #1e70eb;
+    --bg-primary: var(--color-blue-200);
+  }
+
+  :root.dark {
+    --bg-body: var(--color-dark); /* default (light) */
+    --text-body: var(--color-light);
+    --border-color: var(--color-zinc-800);
+    --text-secondary: var(--color-on-secondary-dark);
+    --bg-secondary: var(--color-secondary-dark);
+    --text-primary: #1e70eb;
+    --border-primary: #1f6feb;
+    --primary:#1f6feb;
+    --bg-primary: var(--color-blue-950);
+
+  }
+
+  :root.amoled {
+    --bg-body: var(--color-black) !important; /* default (light) */
+    --text-body: var(--color-light);
+    --border-color: rgb(255 255 255 /0.05);
+    --text-secondary: var(--color-neutral-400);
+    --text-primary: var(--color-lime-600);
+    --bg-primary: var(--color-blue-950);
+  }
+  
+}
+
+@layer utilities {
+  .scrollbar-w-none {
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .dark .panel-active-tab{
+    
+  }
+}

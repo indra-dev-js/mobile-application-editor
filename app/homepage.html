@@ -1,0 +1,147 @@
+<div id="homepage"
+              class="w-full px-3 container sm:container md:container lg:container xl:container 2xl:container mx-auto"
+            >
+              <div class="flex flex-col gap-4 my-4 xl:flex-row">
+                <main
+                  class="w-full flex flex-col gap-y-4 xl:max-w-1/2 order-1 items-start content-start"
+                >
+                  <section class="flex flex-row w-full gap-4 order-1">
+                    <div class="w-full order-1">
+                      <div class="relative flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="absolute w-5 h-5 top-2.5 left-2.5 text-[var(--text-secondary)]"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+
+                        <input
+                          title="Find Projects"
+                          class="w-full bg-[var(--bg-secondary)] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline-[0.125rem] outline-offset-[-2px] outline-[var(--border-color)] rounded-xl pl-10 pr-3 py-2.5 transition duration-300 ease focus:outline-[var(--border-primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5"
+                          placeholder="Find Projects"
+                          type="text"
+                          name="Find Text"
+                        />
+                      </div>
+                    </div>
+                    <div class="order-2 flex items-start">
+                      <button
+                        title="clone repo"
+                        type="button"
+                        class="px-4 py-1.5 bg-[var(--bg-secondary)] text-[var(--text-body)] rounded font-medium cursor-pointer flex items-center justify-center"
+                      >
+                        <i class="codicon codicon-repo-clone text-base!"></i>
+                      </button>
+                    </div>
+                    <div class="order-3 flex items-start">
+                      <button
+                        title="add project"
+                        type="button"
+                        class="px-4 py-1.5 bg-[var(--primary)] text-[var(--text-body)] rounded font-medium cursor-pointer flex items-center justify-center"
+                      >
+                        <i class="codicon codicon-add text-base!"></i>
+                      </button>
+                    </div>
+                  </section>
+                  <section class="order-2 flex flex-col w-full">
+                    <div
+                      class="text-sm uppercase font-medium text-[var(--text-secondary)] mb-2 flex flex-row items-center justify-between"
+                    >
+                      <span> Recent</span>
+                    </div>
+                    <div
+                      class="w-full text-center text-[var(--text-body)] font-medium italic capitalize bg-[var(--bg-secondary)] py-4 rounded-md"
+                    >
+                      no content avaliable!
+                    </div>
+                  </section>
+                  <section class="w-full flex flex-col order-2" id="project">
+                    <div
+                      class="text-sm uppercase font-medium text-[var(--text-secondary)] mb-2 flex flex-row items-center justify-between"
+                    >
+                      <span>project</span>
+                    </div>
+                    <div
+                      class="w-full flex flex-col border border-[var(--border-color)] rounded divide-y divide-[var(--border-color)]"
+                    >
+                      <div
+                        class="flex flex-row w-full p-2 bg-[var(--bg-secondary)]"
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-pointer"
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-12.5"
+                              data-jdenticon-value="html"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col order-2 font-medium">
+                            <span>HTML</span>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                              Dibuat 1jam yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-pointer text-[var(--text-secondary)]"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex flex-row w-full p-2 bg-[var(--bg-secondary)]"
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-pointer"
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-12.5"
+                              data-jdenticon-value="html 2"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col order-2 font-medium">
+                            <span>HTML 2</span>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                              Dibuat 1jam yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-pointer text-[var(--text-secondary)]"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex flex-row w-full p-2 bg-[var(--bg-secondary)]"
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-pointer"
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-12.5"
+                              data-jdenticon-value="No Framework"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col order-2 font-medium">
+                            <span>No Framework</span>
+                            <div class="text-sm text-[var(--text-secondary)]">
+                              Dibuat 1jam yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-pointer text-[var(--text-secondary)]"
+                        ></div>
+                      </div>
+                    </div>
+                  </section>
+                </main>
+                <section class="order-2"></section>
+              </div>
+            </div>
