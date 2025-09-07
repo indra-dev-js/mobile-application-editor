@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html
   lang="en"
-  class="dark overflow-hidden min-h-screen w-screen max-h-screen select-none overscroll-none"
+  class="amoled overflow-hidden min-h-screen w-screen max-h-screen select-none overscroll-none touch-none  text-base antialiased leading-6 selection cursor-[url('../Cursor1.png'),auto]"
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>app:tailwinds-v3</title>
+    
+
     <link rel="stylesheet" href="dist/output.css" />
 
     <link
@@ -36,16 +38,16 @@
     <link rel="stylesheet" href="../src/assets/octicons/octicons.css" />
   </head>
   <body class="min-h-screen max-h-screen overflow-hidden">
-    <div id="app" class="max-h-screen w-screen overflow-">
+    <div id="app" class="max-h-screen w-screen overflow-hidden">
       <div
         class="flex flex-row justify-start items-start content-start w-full overflow-hidden"
       >
         <div
-          class="min-h-screen fixed overflow-hidden min-w-[325px] max-w-[325px] top-0 left-0 z-50 bg-[var(--bg-body)] text-[var(--text-body)] order-1 self-auto md:relative md:translate-0 flex flex-col border-r border-r-[var(--border-color)] md:min-w-[380px] md:max-w-full! md:flex-row"
+          class="min-h-screen fixed overflow-hidden min-w-[325px] max-w-[325px] top-0 left-0 z-50 bg-[var(--bg-body)] text-[var(--text-body)] order-1 self-auto md:relative md:translate-0 flex flex-col border-r border-r-[var(--border-color)] md:min-w-[380px] md:max-w-full! md:flex-row -translate-full"
           id="fileDrawer"
         >
           <div
-            class="w-full flex items-center shrink-0 flex-row md:flex-col md:items-center min-h-[50px] md:w-[70px] md:border-r md:border-r-[var(--border-color)] md:h-screen text-[var(--text-secondary)] md:justify-start md:pb-4"
+            class="w-full flex items-center shrink-0 flex-row md:flex-col md:items-center min-h-[50px] md:w-[70px] md:border-r md:border-r-[var(--border-color)] md:h-screen text-[#9198a1] md:justify-start md:pb-4"
             id="drawerHeader"
           >
             <div
@@ -103,13 +105,13 @@
             data-content="1"
           >
             <div
-              class="uppercase pl-4 pr-3 text-[var(--text-secondary)] h-10 flex items-center justify-between mb-4"
+              class="uppercase pl-4 pr-3 text-[var(--text-secondary)] h-10 flex items-center justify-between mb-1"
             >
               <div class="font-medium tracking-tight text-[.83rem]">
                 Navigasi
               </div>
               <button
-                class="size-10 focus:outline-none cursor-pointer"
+                class="size-10 focus:outline-none cursor-[url('../Cursor2.png'),auto] "
                 title="open dropdown menu"
                 type="button"
               >
@@ -118,13 +120,13 @@
             </div>
             <div class="px-4">
               <div
-                class="flex flex-row flex-wrap border border-[var(--border-color)] rounded px-2 py-4 gap-y-2.5 *:text-base! *:mx-[6px] *:not-last:py-2 *:w-[calc(33.3333%-12px)] *:transition-colors *:cursor-pointer bg-secondary-dark *:[&:focus]:bg-[color-mix(in_srgb,var(--bg-secondary)_95%,white)] *:focus:outline-none max-w-80 mx-auto"
+                class="flex flex-row flex-wrap border border-[var(--border-color)] rounded px-2 py-4 gap-y-2.5 *:text-base! *:mx-[6px] *:not-last:py-2 *:w-[calc(33.3333%-12px)] *:transition-colors *:cursor-pointer bg-[var(--bgColor-default)] *:[&:focus]:bg-[#262c36] *:focus:outline-none max-w-68 mx-auto"
               >
                 <button
                   class="rounded-md hover:bg-[var(--bg-secondary)] shrink-0 flex flex-col items-center justify-center text-[var(--text-secondary)] order-1"
                   type="button"
                 >
-                  <i class="icodex-inbox text-[22px]!"></i>
+                  <i class="icodex-inbox text-[22px]! "></i>
                   <span class="text-[11px] capitalize font-medium mt-2"
                     >proyek</span
                   >
@@ -185,7 +187,7 @@
             data-content="2"
           >
             <div
-              class="*:text-[var(--text-secondary)] flex flex-row w-full items-center min-h-10 pl-4 pr-3"
+              class="*:text-[#9198a1] flex flex-row w-full items-center min-h-10 pl-4 pr-3"
               id="treeviewHeader"
             >
               <span
@@ -233,7 +235,7 @@
             <div class="flex-1" id="rootDir">
               <a
                 draggable="true"
-                class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-[url('../Cursor2.png'),auto]  hover:bg-[#151b23] transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
                 tabindex="0"
               >
                 <i class="icodex-chevron-right text-sm! rotate-90"></i>
@@ -242,14 +244,14 @@
                   >HTML
                 </span>
                 <span
-                  class="icodex-kebab-horizontal text-2xl ml-auto shrink-0 basis-8 text-[var(--text-secondary)]"
+                  class="icodex-kebab-horizontal text-2xl ml-auto shrink-0 basis-8 text-[var(--fgColor-muted)]"
                 ></span>
               </a>
               <div class="flex-1" id="dirContent1">
                 <a
                   draggable="true"
                   data-type="folder"
-                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-[url('../Cursor2.png'),auto]  hover:bg-[#151b23] transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
                   tabindex="0"
                 >
                   <span
@@ -267,7 +269,7 @@
                 <a
                   draggable="true"
                   data-type="file"
-                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-pointer hover:bg-white/10 transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
+                  class="w-full min-h-[40px] flex items-center pl-3 pr-3 *:inline-flex *:items-center cursor-[url('../Cursor2.png'),auto]  hover:bg-[#151b23] transition-colors ease-in-out duration-150 outline outline-transparent focus:outline-primary outline-offset-[-1px] focus:bg-primary/15"
                   tabindex="0"
                 >
                   <span
@@ -347,26 +349,28 @@
             <div class="capitalize px-4">
               <div class="w-full max-w-80 mx-auto">
                 <div class="relative flex items-center my-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="absolute w-5 h-5 top-2.5 left-2.5 text-[var(--text-secondary)]"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="absolute w-5 h-5 top-1] left-2.5 text-[#9198a1]"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
 
-                  <input
-                    class="w-full bg-[var(--bg-secondary)] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline-[0.125rem] outline-offset-[-2px] outline-[var(--border-color)] rounded-xl pl-10 pr-3 py-2.5 transition duration-300 ease focus:outline-[var(--border-primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5"
-                    placeholder="Find Text"
-                    type="text"
-                    name="Find Text"
-                  />
-                </div>
+                        <input
+                          title="Find Text"
+                          class="w-full bg-[#0d1117] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline outline-offset-[-1px] outline-[#3d444db3] rounded-md pl-9 pr-3 py-1 transition duration-300 ease focus:outline-[var(--primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5 h-9 leading-5 font-normal "
+                          placeholder="Find Text"
+                          type="search"
+                          name="Find Text"
+                          autocorrect="off"
+                        />
+                      </div>
               </div>
             </div>
           </div>
@@ -379,7 +383,7 @@
                 <span>Login</span>
               </div>
               <div
-                class="w-full max-w-80 px-4 mt-2 flex flex-col justify-center items-center gap-3 mx-auto"
+                class="w-full max-w-74 px-4 mt-2 flex flex-col justify-center items-center gap-3 mx-auto"
               >
                 <a
                   title="Masuk dengan Google"
@@ -459,10 +463,10 @@
           id="contentRight"
         >
           <div
-            class="min-h-[60px] max-h-[60px] border-b border-b-[var(--border-color)] w-full flex items-center pl-2.5 md:px-0 text-[var(--text-secondary)]"
+            class="min-h-[60px] max-h-[60px] border-b border-b-[var(--border-color)] w-full flex items-center shrink pl-6 md:px-0"
           >
             <div
-              class="flex flex-row flex-nowrap justify-start items-center content-start w-full min-h-[60px]"
+              class="flex flex-row flex-nowrap justify-start items-center content-start w-full min-h-[60px] "
             >
               <div
                 class="min-h-full min-w-max flex-1 order-1 basis-0 grow-0 shrink-0 self-auto items-center inline-flex flex-row gap-2 flex-nowrap"
@@ -470,93 +474,59 @@
                 <div
                   aria-label="menu"
                   role="button"
-                  class="min-w-max cursor-pointer md:hidden"
+                  class="min-w-max cursor-[url('../Cursor2.png'),auto]  text-[var(--text-body)]/90 md:hidden"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                  </svg>
+                <i class="octicon octicon-three-bars-16 text-2xl "></i>
                 </div>
               </div>
               <div
-                class="min-h-[60px] min-w-[100px] flex-1 order-2 basis-60 grow shrink-0 self-auto px-2.5 flex items-center"
+                class="min-h-[60px] min-w-[100px] flex-1 order-2 basis-60 grow shrink self-auto px-2.5 flex items-center"
               >
-                <div
-                  style="
-                    overflow-x: scroll;
-                    max-width: min-content;
-                    scrollbar-width: none;
-                  "
+                <nav
+                  class="hidden md:flex items-center shrink-0 text-[var(--text-secondary)] mr-2"
+                  aria-label="Pagination"
                 >
+                  <button class="size-10 focus:outline-none focus:text-[var(--text-body)]/90 disabled:text-[var(--text-secondary)]/70 not-disabled:cursor-pointer" type="button" aria-label="Previous">
+                    <span><i class="octicon octicon-arrow-left-16 text-[20px]"></i></span>
+                  </button>
+                  <button disabled class="size-10 focus:outline-none focus:text-[var(--text-body)] disabled:text-[var(--text-secondary)]/70 not-disabled:cursor-pointer" type="button" aria-label="Next">
+                    <span><i class="octicon octicon-arrow-right-16 text-[20px]"></i></span>
+                  </button>
+                </nav>
+                <div class="overflow-x-scroll scrollbar-w-none max-w-min max-h-15">
+                
                   <nav
-                    class="text-sm font-medium w-full"
+                    class="text-base font-medium w-full text-[var(--text-body)] h-15 max-h-15 shrink"
                     aria-label="breadcrumb"
                   >
                     <ol
-                      class="flex flex-nowrap items-center gap-1 shrink-0 leading-4"
+                      class="flex flex-nowrap items-center gap-x-1 shrink-0 leading-4 h-15 max-h-15"
                     >
-                      <li class="flex items-center gap-1">
+                      <li class="flex items-center gap-x-1">
                         <a
                           draggable="false"
                           href="#"
                           class="select-none inline-flex items-center font-[600] outline-none"
-                          >dist</a
+                          >src</a
                         >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                          stroke-width="2"
-                          stroke="currentColor"
-                          class="size-4 mt-0.5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
+                          <i class="octicon octicon-chevron-right-16 mt-0.5"></i>
                       </li>
-                      <li class="flex items-center gap-1">
+                      <li class="flex items-center gap-x-1">
                         <a
                           draggable="false"
                           href="#"
                           class="select-none inline-flex items-center font-[600] outline-none"
-                          >public</a
+                          >page</a
                         >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                          stroke-width="2"
-                          stroke="currentColor"
-                          class="size-4 mt-0.5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </li>
+                          <i class="octicon octicon-chevron-right-16 mt-0.5"></i>
+                      </li> 
+                    
                       <li
-                        class="flex items-center leading-4 gap-1 font-medium select-none"
+                        class="flex items-center leading-4 gap-x-2 font-medium select-none cursor-[url('../Cursor2.png'),auto] "
                         aria-current="page"
                       >
                         <i class="devicon-html5-plain colored mt-0.5"></i>
-                        index.html
+                        <span>index.html</span>
                       </li>
                     </ol>
                   </nav>
@@ -566,51 +536,260 @@
                 class="min-h-[50px] min-w-min justify-center flex-1 order-3 basis-24 grow-0 shrink-0 self-auto cursor-default"
               >
                 <div
-                  class="inline-flex items-center w-[2.5rem] h-[3rem] justify-center cursor-pointer"
+                  class="inline-flex items-center w-[2.5rem] h-[3rem] justify-center cursor-[url('../Cursor2.png'),auto] "
                   aria-label="run"
                   role="button"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="size-5"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="size-5 fill-[var(--text-body)]/90"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path></svg>
+
                 </div>
                 <div
-                  class="inline-flex items-center min-w-[2.5rem] h-[3rem] justify-center cursor-pointer"
+                  class="inline-flex items-center min-w-[2.5rem] h-[3rem] justify-center cursor-[url('../Cursor2.png'),auto] "
                   aria-label="run"
                   role="button"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="size-5 text-emerald-500"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                  <svg class=size-5 viewBox="0 0 15 16"xmlns=http://www.w3.org/2000/svg><path d="M 13,7.5385 C 13,7.2437 12.8228,7.05 12.6154,6.923 L 3.0769,1.0769 C 3,1 2.846,1 2.692,1 2.1538,1 2,1.3846 2,1.692 V 13.3077 C 2,13.692 2.1538,14 2.692,14 2.846,14 2.923,14 3.0769,13.923 L 12.6154,8.1538 C 12.8235,8.028 13,7.788 13,7.5385 Z"fill=#0dbf7f></path></svg>
                 </div>
               </div>
             </div>
           </div>
           <div
             class="overflow-x-hidden overflow-y-auto scrollbar-w-none h-[calc(100vh-61px)] max-h-[calc(100vh-61px)] flex flex-col"
-          ></div>
+          >
+      <div id="homepage"
+              class="w-full px-6 container sm:container md:container lg:container xl:container 2xl:container mx-auto"
+            >
+              <div class="flex flex-col gap-4 my-4 xl:flex-row">
+                <main
+                  class="w-full flex flex-col gap-y-4 xl:max-w-1/2 order-1 items-start content-start"
+                >
+                  <section class="flex flex-row w-full gap-4 order-1 items-center">
+                    <div class="w-full order-1">
+                      <div class="relative flex items-center ">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="absolute w-5 h-5 top-1] left-2.5 text-[#9198a1]"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+
+                        <input
+                          title="Find Projects"
+                          class="w-full bg-[#0d1117] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline outline-offset-[-1px] outline-[#3d444db3] rounded-md pl-9 pr-3 py-1 transition duration-300 ease focus:outline-[var(--primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5 h-9 leading-5 font-normal "
+                          placeholder="Find Projects"
+                          type="text"
+                          name="Find Text"
+                        />
+                      </div>
+                    </div>
+                    <div class="order-2 flex items-start">
+                    <button
+                      title="clone repo"
+                      type="button"
+                      class="p-2  rounded-md font-medium cursor-[url('../Cursor2.png'),auto]  flex items-center justify-center bg-[#212830] text-[var(--text-body)]"
+                    >
+                      <i class="octicon octicon-repo-clone-16    leading-4"></i>
+                    </button>
+                  </div>
+                    <div class="order-3 flex items-start">
+                      <button
+                      title="add project"
+                      type="button"
+                      class="p-2 bg-[var(--primary)] text-[var(--color-white)]! rounded-md font-medium cursor-[url('../Cursor2.png'),auto]  flex items-center justify-center"
+                      >
+                      <i class="octicon octicon-plus-16 leading-4"></i>
+                    </button>
+                  </div>
+                  
+                  </section>
+                  <section class="order-2 flex flex-col w-full">
+                    <div
+                      class="text-[0.8rem] uppercase font-medium text-[var(--text-secondary)] mb-2 flex flex-row items-center justify-between"
+                    >
+                      <span> Recent</span>
+                    </div>
+                    <div><!-- content here --></div>
+                  </section>
+                  <section class="w-full flex flex-col order-2" id="project">
+                    <div
+                      class="text-[0.8rem] uppercase font-medium text-[var(--text-secondary)] mb-2 flex flex-row items-center justify-between"
+                    >
+                      <span>project</span>
+                    </div>
+                    <div
+                      class="bg-[#0d1117] w-full flex flex-col border border-[var(--border-color)] rounded divide-y divide-[var(--border-color)]"
+                    >
+                      <div
+                        class="flex flex-row w-full p-3 "
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-[url('../Cursor2.png'),auto] "
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-10"
+                              data-jdenticon-value="html"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col gap-y-1 order-2 font-medium ">
+                            <span>HTML</span>
+                            <div class="text-[0.8rem] text-[#9198a1] capitalize leading-4">
+                              1 jam yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-[url('../Cursor2.png'),auto]  text-[#9198a1]"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex flex-row w-full p-3 bg-[var(--bg-secondary)]"
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-[url('../Cursor2.png'),auto] "
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-10"
+                              data-jdenticon-value="html 2"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col gap-y-1 order-2 font-medium ">
+                            <span>HTML 2</span>
+                            <div class="text-[0.8rem] text-[#9198a1] capitalize leading-4">
+                              2 hari yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-[url('../Cursor2.png'),auto]  text-[#9198a1]"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex flex-row w-full p-3 bg-[var(--bg-secondary)]"
+                      >
+                        <div
+                          class="inline-flex flex-row gap-2 w-full order-1 cursor-[url('../Cursor2.png'),auto] "
+                        >
+                          <div class="order-1">
+                            <svg
+                              class="size-10"
+                              data-jdenticon-value="No Framework"
+                            ></svg>
+                          </div>
+                          <a class="flex flex-col gap-y-1 order-2 font-medium ">
+                            <span>No Framework</span>
+                            <div class="text-[0.8rem] text-[#9198a1] capitalize leading-4">
+                              12 hari yang lalu
+                            </div>
+                          </a>
+                        </div>
+                        <div
+                          class="icodex icodex-kebab-horizontal text-xl inline-flex items-center order-2 px-2 cursor-[url('../Cursor2.png'),auto]  text-[#9198a1]"
+                        ></div>
+                      </div>
+                    </div>
+                  </section>
+                </main>
+                <section class="order-2"></section>
+              </div>
+            </div>
+        </div>
         </div>
         <!-- content right end -->
       </div>
     </div>
+
+    <div class="fixed left-0 top-0 w-screen h-screen z-[100] bg-white/1 backdrop-blur-sm backdrop-brightness-50">
+    <div class="flex flex-col max-h-[95vh] relative ">
+<div class="bg-[var(--bg-body)] text-inherit border border-[#3d444db3]  w-[calc(100%-3rem)]   md:w-1/2 md:inset-x-1/4  relative rounded overflow-hidden  inset-x-6 flex flex-col my-6">
+    <div class="flex items-center w-full ps-6 pe-4 py-3 border-b border-b-[#3d444db3]">
+     <span class="text-sm capitalize font-medium">New Folder</span>
+     <span class="ms-auto text-2xl px-1 text-[var(--fgColor-muted)] cursor-[url('../Cursor2.png'),auto] " role="button" aria-label="Close">
+      <i class="octicon octicon-x-24"></i>
+     </span>
+    </div>
+      <div class="px-6 overflow-auto scrollbar-w-none  relative w-full flex flex-col" >
+  <div class="py-6">
+    <div class="relative flex items-center ">
+  <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="absolute w-5 h-5 top-1] left-2.5 text-[#9198a1]"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+
+                        <input
+                          title="New Folder"
+                          class="w-full bg-[#0d1117] placeholder:text-[var(--text-secondary)] text-[var(--text-body)] text-sm outline outline-offset-[-1px] outline-[#3d444db3] rounded-md pl-9 pr-3 py-1 transition duration-300 ease focus:outline-[var(--primary)] shadow-sm focus:shadow focus:bg-[var(--primary)]/5 h-9 leading-5 font-normal "
+                          placeholder="New Folder"
+                          type="text"
+                          name="New Folder"
+                          autocorrect="off"
+                         spellcheck="false"
+                        />
+
+                      </div>
+<div class="flex flex-row items-center gap-4 justify-end mt-6 *:border *:border-[#3d444d] ">
+  <span class="py-2 px-4 text-sm font-semibold rounded bg-[#151b23] text-white cursor-[url('../Cursor2.png'),auto] " role="button" tabindex="0" aria-label="confirm">Batalkan</span>
+<span class="py-2 px-4 text-sm font-semibold rounded bg-primary border-transparent! text-white cursor-[url('../Cursor2.png'),auto]" role="button" tabindex="0" aria-label="confirm">Buat</span>
+</div>
+  </div>
+<!-- <article class="prose prose-inver max-w-none flex-1">
+  <h1 class="text-2xl font-semibold mt-6 mb-4">mobile-editor</h1>
+
+  <p class="mb-4">
+    Deskripsi singkat project, jalankan 
+    <code class="bg-gray-800 text-pink-400 px-1 py-0.5 rounded font-mono text-sm">npm run dev</code> 
+    untuk development.
+  </p>
+
+  <h2 class="text-xl font-semibold mt-6 mb-3 border-b border-gray-700 pb-1">Installation</h2>
+  <p>...</p>
+
+  <h2 class="text-xl font-semibold mt-6 mb-3 border-b border-gray-700 pb-1">Usage</h2>
+  <p class="mb-4">
+    Contoh jalankan: 
+    <code class="bg-gray-800 text-pink-400 px-1 py-0.5 rounded font-mono text-sm">node index.js</code>
+  </p>
+
+  <h2 class="text-xl font-semibold mt-6 mb-3 border-b border-gray-700 pb-1">Features</h2>
+  <ul class="list-disc pl-6 mb-4">
+    <li>Feature satu</li>
+    <li>Feature dua</li>
+    <li>Feature tiga</li>
+  </ul>
+
+  <h2 class="text-xl font-semibold mt-6 mb-3 border-b border-gray-700 pb-1">Contributing</h2>
+  <ol class="list-decimal pl-6 mb-4">
+    <li>Fork repo</li>
+    <li>Buat branch</li>
+    <li>Commit changes</li>
+    <li>Buat pull request</li>
+  </ol>
+
+  <h2 class="text-xl font-semibold mt-6 mb-3 border-b border-gray-700 pb-1">License</h2>
+  <p class="mb-4">MIT License</p>
+</article> -->
+
+      </div>
+    </div>
+    </div>
+    </div>
+
+
 
     <!-- pastikan sudah include GoldenLayout CSS & JS -->
 
@@ -631,7 +810,7 @@
           }
 
           function query() {
-            return window.matchMedia('(min-width: 768px)').matches;
+            return window.matchMedia('(min-width: 1024px)').matches;
           }
 
           function enableInteract() {
@@ -641,7 +820,7 @@
               listeners: {
                 start() {
                   handle.classList.remove('bg-transparent');
-                  handle.classList.add('bg-neutral-700/50', 'w-1.5');
+                  handle.classList.add('bg-zinc-700/50', 'w-1.5');
                 },
                 move(event) {
                   event.target.style.width = event.rect.width + 'px';
@@ -651,12 +830,12 @@
                   handle.classList.add('bg-transparent');
                 },
               },
-              modifiers: [
-                interact.modifiers.restrictSize({
-                  min: { width: 325 },
-                  max: { width: window.innerWidth - 325 },
-                }),
-              ],
+            modifiers: [
+  interact.modifiers.restrictSize({
+    min: { width: 325 },
+    max: { width: Math.min(500, window.innerWidth - 325) } // tetap aman, tidak melebihi 600px
+  }),
+],
             });
             console.log('Interact diaktifkan');
           }

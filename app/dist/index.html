@@ -4,8 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script defer type="module"src="belajar-object-javascript.js"></script>
+  <style>
+    body {
+      background-color: #121216;
+      color: #fafafa;
+      margin: 0;
+      box-sizing: border-box;
+      font-size: 1rem;
+      padding: 2rem;
+      line-height: 1.5rem;
+      font-family: sans-serif;
+      font-weight: 500;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .nav-link {
+      color: royalblue;
+    }
+
+    [data-t-id]:lang(id)::after {
+      content: attr(data-t-id)
+    }
+    [data-t-en]:lang(en)::after {
+      content: attr(data-t-en);
+
+    }
+    [data-t-ko]:lang(ko)::after {
+      content: attr(data-t-ko)
+    }
+    [data-t-ru]:lang(ru)::after {
+      content: attr(data-t-ru)
+    }
+    [data-t-fr]:lang(fr)::after {
+      content: attr(data-t-fr)
+    }    
+    [data-t-hi]:lang(hi)::after {
+      content: attr(data-t-hi)
+    }
+    
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+  </style>
 </head>
 <body>
-  <script src="belajar-object-javascript.js"></script>
+<select title="bahasa" name="language" id="lang">
+  <option value="en">English</option>
+  <option value="id">Indonesia</option>
+  <option value="ko">Korea</option>
+  <option value="ru">Rusia</option>
+  <option value="fr">French</option>
+  <option value="hi">Hindi</option>
+</select>
+<div id="app">
+  
+</div>
 </body>
 </html>

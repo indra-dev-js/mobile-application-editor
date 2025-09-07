@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --color-dark: #121216;
-  --color-light: #fafafa;
+  --color-light: #f0f6fc;
   --color-primary: var(--color-blue-500);
   --color-secondary: var(--color-zinc-200);
   --color-on-secondary: var(--color-zinc-600);
   --color-secondary-dark: var(--color-zinc-900);
   --color-on-secondary-dark: var(--color-zinc-400);
+  --color-green-fgColor:#41b445;
+  --font-opensans: 'Open Sans', sans-serif;
+  --font-opensans--font-variation-settings: 'wdth' 100;
 }
 
 @layer base {
@@ -19,6 +23,7 @@
     --bg-secondary: var(--color-secondary);
     --text-primary: #1e70eb;
     --bg-primary: var(--color-blue-200);
+    --borderColor-accent-muted: #54aeff66;
   }
 
   :root.dark {
@@ -29,30 +34,45 @@
     --bg-secondary: var(--color-secondary-dark);
     --text-primary: #1e70eb;
     --border-primary: #1f6feb;
-    --primary:#1f6feb;
+    --primary: #1f6feb;
     --bg-primary: var(--color-blue-950);
-
+    --borderColor-accent-muted: #388bfd66;
+    --bgColor-accent-emphasis: #1f6feb;
   }
 
   :root.amoled {
-    --bg-body: var(--color-black) !important; /* default (light) */
+    --bgColor-default: #0d1117;
+    --bgColor-muted: #151b23;
+    --borderColor-default: #3d444d;
+    --borderColor-muted: #3d444db3;
+    --fgColor-muted: #9198a1;
+    --bg-body: #010409 !important; /* default (light) */
     --text-body: var(--color-light);
-    --border-color: rgb(255 255 255 /0.05);
+    --border-color: var(--borderColor-muted);
+    --primary: #1f6feb;
     --text-secondary: var(--color-neutral-400);
     --text-primary: var(--color-lime-600);
     --bg-primary: var(--color-blue-950);
   }
-  
+
+  :root.dark_tritanopia {
+    --bgColor-default: #0d1117;
+    --bgColor-muted: #151b23;
+    --bgColor-disabled: #212830;
+  }
 }
 
 @layer utilities {
   .scrollbar-w-none {
     scrollbar-width: none;
   }
+  .selection {
+    background-color: var(--borderColor-accent-muted);
+    color: var(--text-body);
+  }
 }
 
 @layer components {
-  .dark .panel-active-tab{
-    
+  .dark .panel-active-tab {
   }
 }
